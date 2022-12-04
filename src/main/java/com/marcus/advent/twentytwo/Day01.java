@@ -11,7 +11,7 @@ public class Day01 {
     public int task2(int limit) throws IOException {
         List<Integer> calories = new ArrayList<>();
         int total = 0;
-        try (BufferedReader reader = new BufferedReader(new FileReader("./src/main/resources/day-01-1-input.txt"))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader("./src/main/resources/day-01.txt"))) {
             String line;
             while ((line = reader.readLine()) != null){
                 if (line.isEmpty()) {

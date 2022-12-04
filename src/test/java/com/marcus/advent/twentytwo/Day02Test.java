@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 class Day02Test {
     @Test
     void test() throws IOException {
-        assertEquals(0, new Day02().part1());
+        assertEquals(13509, new Day02().part1());
     }
 
 }

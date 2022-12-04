@@ -8,7 +8,7 @@ import java.util.stream.Stream;
 
 public class Day02 {
     public int part1() throws IOException {
-        try (Stream<String> stream = Files.lines(Paths.get("./src/main/resources/day-02-input.txt"))) {
+        try (Stream<String> stream = Files.lines(Paths.get("./src/main/resources/day-02.txt"))) {
             return stream.mapToInt(e -> scores2.get(e))
                     .sum();
 
