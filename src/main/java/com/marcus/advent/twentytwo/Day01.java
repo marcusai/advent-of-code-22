@@ -8,32 +8,13 @@ import java.util.Comparator;
 import java.util.List;
 
 public class Day01 {
-    public int task1() throws IOException {
-        int max = 0;
-        int total = 0;
-        try (BufferedReader reader = new BufferedReader(new FileReader("./src/main/resources/day-01-1-input.txt"))) {
-            String line;
-            while ((line = reader.readLine()) != null){
-                if (line.equals("")) {
-                    max = Math.max(max, total);
-                    total = 0;
-                }
-                else {
-                    total += Integer.parseInt(line);
-                }
-            }
-        }
-        return Math.max(max, total);
-
-    }
-
-    public int task2() throws IOException {
+    public int task2(int limit) throws IOException {
         List<Integer> calories = new ArrayList<>();
         int total = 0;
         try (BufferedReader reader = new BufferedReader(new FileReader("./src/main/resources/day-01-1-input.txt"))) {
             String line;
             while ((line = reader.readLine()) != null){
-                if (line.equals("")) {
+                if (line.isEmpty()) {
                     calories.add(total);
                     total = 0;
                 }
@@ -43,7 +24,7 @@ public class Day01 {
             }
         }
         calories.add(total);
-        return calories.stream().sorted(Comparator.reverseOrder()).limit(3).mapToInt(Integer::intValue).sum();
+        return calories.stream().sorted(Comparator.reverseOrder()).limit(limit).mapToInt(Integer::intValue).sum();
 
     }
 }

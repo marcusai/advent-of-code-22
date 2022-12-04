@@ -10,12 +10,12 @@ class Day01Test {
     @Test
     void test1() throws IOException {
         Day01 day01 = new Day01();
-        assertEquals(67027, day01.task1());
+        assertEquals(67027, day01.task2(1));
     }
 
     @Test
     void test2() throws IOException {
         Day01 day01 = new Day01();
-        assertEquals(67027, day01.task2());
+        assertEquals(197291, day01.task2(3));
     }
 }
