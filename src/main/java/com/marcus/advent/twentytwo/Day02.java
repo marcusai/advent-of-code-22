@@ -7,14 +7,25 @@ import java.util.Map;
 import java.util.stream.Stream;
 
 public class Day02 {
+
     public int part1() throws IOException {
         try (Stream<String> stream = Files.lines(Paths.get("./src/main/resources/day-02.txt"))) {
-            return stream.mapToInt(e -> scores2.get(e))
-                    .sum();
-
+            return getResult(stream, scores1);
         }
     }
-    private Map<String, Integer> scores = Map.of(
+
+    public int part2() throws IOException {
+        try (Stream<String> stream = Files.lines(Paths.get("./src/main/resources/day-02.txt"))) {
+            return getResult(stream, scores2);
+        }
+    }
+
+    private int getResult(Stream<String> stream, Map<String, Integer> scores) {
+        return stream.mapToInt(scores::get)
+                .sum();
+    }
+
+    private final Map<String, Integer> scores1 = Map.of(
             "A X", 4,
             "A Y", 8,
             "A Z", 3,
@@ -27,7 +38,7 @@ public class Day02 {
 
     );
 
-    private Map<String, Integer> scores2 = Map.of(
+    private final Map<String, Integer> scores2 = Map.of(
             "A X", 3,
             "A Y", 4,
             "A Z", 8,
