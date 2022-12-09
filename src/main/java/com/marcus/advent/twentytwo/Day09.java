@@ -25,7 +25,7 @@ public class Day09 {
                     setHead(head, direction);
                     if (tail == null) {
                         tail = new Coord(0, 0);
-                        visited.add(tail);
+                        visited.add(new Coord(tail.x, tail.y));
                         continue;
                     }
 
@@ -54,10 +54,7 @@ public class Day09 {
                     setHead(knots[0], direction);
                     for (int j = 1; j < knots.length; j++) {
                         if (knots[j] == null) {
-                            if (knots[j-1].x == 0 && knots[j-1].y ==0) {
-
-                            }
-                            else {
+                            if (!(knots[j-1].x == 0 && knots[j-1].y ==0)) {
                                 knots[j] = new Coord(0, 0);
                             }
                             break;
@@ -76,7 +73,6 @@ public class Day09 {
     }
 
     private void setTail(Coord tail, Coord head) {
-        int x = tail.x, y = tail.y;
         if (head.x != tail.x) {
             if (head.x > tail.x) {
                 tail.x++;
