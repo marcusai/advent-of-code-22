@@ -6,8 +6,7 @@ import java.io.IOException;
 import java.util.HashSet;
 import java.util.Set;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
+import com.marcus.advent.twentytwo.util.Coord;
 
 public class Day09 {
     public int part1() throws IOException {
@@ -116,9 +115,3 @@ public class Day09 {
 
 }
 
-@Data
-@AllArgsConstructor
-class Coord {
-    public int x;
-    public int y;
-}
