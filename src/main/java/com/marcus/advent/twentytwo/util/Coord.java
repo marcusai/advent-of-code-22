@@ -14,4 +14,9 @@ public class Coord {
     public int x;
     public int y;
     public int value ;
+
+    public static Coord parse(String input, String divider) {
+        String[] array = input.split(divider);
+        return new Coord(Integer.parseInt(array[0]), Integer.parseInt(array[1]));
+    }
 }
